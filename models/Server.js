@@ -2,7 +2,6 @@ const express= require('express');
 const cors=require('cors');
 require('dotenv').config();
 const MySQLConnection = require('../database/mysql'); 
-const port = process.env.PORT;
 
 class Server{
     constructor(){
@@ -30,7 +29,7 @@ middlewares(){
 
 listen(){
     this.app.listen(this.port || 3000, ()=>{ 
-         console.log(`El servidor esta corriendo en el puerto ${port}`);
+         console.log(`El servidor esta corriendo en el puerto ${this.port}`);
     });
 }
 mySQLDBConect(){
