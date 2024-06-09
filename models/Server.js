@@ -29,7 +29,7 @@ middlewares(){
 }
 
 listen(){
-    this.app.listen(port, ()=>{ 
+    this.app.listen(this.port || 3000, ()=>{ 
          console.log(`El servidor esta corriendo en el puerto ${port}`);
     });
 }
