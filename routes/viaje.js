@@ -7,10 +7,14 @@ const {
     getAllviajess,
     postViaje,
     deleteViaje,
-    updateViaje
+    updateViaje,
+    getAllviajessById
 }=require('../controllers/viaje');
 
 router.get('/',   getAllviajess);
+
+router.get('/:idViaje',   getAllviajessById);
+
 
 router.post('/',  postViaje);
 
