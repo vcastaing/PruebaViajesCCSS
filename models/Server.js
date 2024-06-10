@@ -17,7 +17,6 @@ routes(){
 //Creamos la primera peticion 
 this.app.use(this.usersPath,require('../routes/users'));
 this.app.use(this.viajePath,require('../routes/viaje'));
-
 }
 //Funciones que tiene el express y que me permite usarlas reutilizando codigo
 middlewares(){
