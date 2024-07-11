@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const MySQLConnection = async () => {
     try {
-        const connection = await mysql.createConnection({
+        const connection = mysql.createConnection({
             database: process.env.MYSQLDATABASE,
             host: process.env.MYSQLHOST,
             password: process.env.MYSQLPASSWORD,
