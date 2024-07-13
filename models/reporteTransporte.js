@@ -4,13 +4,13 @@ const getAllServicioss = async () => {
     let connection
     try {
         connection = await MySQLConnection();
-        const [servicio] = await connection.execute('SELECT * FROM Viaje');
+        const [servicio] = await connection.execute('SELECT id, litrosAproximados, kilometraje, fecha FROM registroCombustible');
   
       if (servicio.length === 0) {
-          console.log('No se enconto ningun viaje');
-          return { success: false, message: 'No se enconto ningun viaje' };
+          console.log('No se enconto ningun registro de combustible');
+          return { success: false, message: 'No se enconto ningun registro de combustible' };
       } else {
-          console.log('El viaje se encontro exitosamente');
+          console.log('El registro de combustible se encontro exitosamente');
           return { success: true, servicio: servicio };
       }  
   
