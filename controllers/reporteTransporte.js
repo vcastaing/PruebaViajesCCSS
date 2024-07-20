@@ -1,22 +1,5 @@
 const servicio = require('../models/reporteTransporte');
-const { getAllServicioss, getServiciosPorRangoFechass } = require('../models/reporteTransporte');
-
-const getAllServicios = async (req, res) => {
-    try {
-        const servicio = await getAllServicioss();
-    
-        if (servicio.success) {
-          res
-            .status(200)
-            .json({ message: servicio.message, servicio: servicio.servicio });
-        } else {
-          res.status(404).json({ message: viajeAll.message });
-        }
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Error al obtener los registros" });
-      }
-};
+const { getServiciosPorRangoFechass } = require('../models/reporteTransporte');
 
 const getServiciosPorRangoFechas = async (req, res) => {
   const { fechaInicio, fechaFin } = req.body;
@@ -37,4 +20,4 @@ const getServiciosPorRangoFechas = async (req, res) => {
     }
 };
 
-module.exports = { getAllServicios, getServiciosPorRangoFechas };
+module.exports = { getServiciosPorRangoFechas };

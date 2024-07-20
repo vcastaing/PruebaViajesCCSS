@@ -4,12 +4,10 @@ const router=Router();
 
 
 const {
-    getAllServicios,
     getServiciosPorRangoFechas
 } = require('../controllers/reporteTransporte');
 
-router.get('/', getAllServicios);
-router.post('/fecha', getServiciosPorRangoFechas);
+router.post('/', getServiciosPorRangoFechas);
 
 module.exports=router; 
 
